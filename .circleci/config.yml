@@ -13,6 +13,6 @@ jobs:
           command: make
       - run:
           name: test
-          command: pwd && python BUILD/test.py
+          command: python test.py
       - store_artifacts:
           path: BUILD/

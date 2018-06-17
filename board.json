@@ -1,0 +1,20 @@
+{
+	"description": "STM-DK",
+	"components": [
+			{
+			"name": "stm32f4",
+			"id": 0,
+			"type": "MCU",
+			"class": "Stm32f4"
+		},
+		{
+			"name": "UserButton",
+			"id": 2,
+			"type": "Peripheral",
+			"class": "Button",
+			"config": {
+				"in": 45
+			}
+		}
+	]
+}
