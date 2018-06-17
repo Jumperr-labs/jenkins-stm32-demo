@@ -10,4 +10,4 @@ before_install:
 
 script:
 - docker run -v $PWD:/my_files_in_docker --entrypoint /usr/bin/make jumperio/vlab-gcc-arm -C my_files_in_docker
-- docker run -v $PWD:/my_files_in_docker -w /my_files_in_docker --entrypoint python jumperio/vlab-gcc-arm my_files_in_docker/test.py
+- docker run -v $PWD:/my_files_in_docker -w /my_files_in_docker --entrypoint python jumperio/vlab-gcc-arm test.py
