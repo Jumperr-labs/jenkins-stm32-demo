@@ -6,7 +6,7 @@ from jumper.vlab import Vlab
 class TestReadInterrupt(unittest.TestCase):
     def setUp(self):
         # set up the device simulation
-        self.v = Vlab(working_directory=".", print_uart=True)
+        self.v = Vlab(working_directory=".", print_uart=True, token="20Ew9+GBD5UwnjMZHoZgECQbEqAm5S4RlmM/GMeFvVk=")
         self.v.load("BUILD/STM32_Button_Debounce.bin")
         self.v.on_pin_level_event(self.pin_listener)
         self.is_led_on = False
