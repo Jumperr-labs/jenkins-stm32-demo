@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: install mbed
-          command: pip install mbed-cli
+          command: pip install mbed-cli && mbed config -G ARM_PATH /usr/bin 
       - run:
           name: build
           command: make
