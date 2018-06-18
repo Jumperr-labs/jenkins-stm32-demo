@@ -6,7 +6,7 @@ from jumper.vlab import Vlab
 class TestDebouncer(unittest.TestCase):
     def setUp(self):
         # set up the device simulation
-        self.v = Vlab(working_directory=".", print_uart=True, token="20Ew9+GBD5UwnjMZHoZgECQbEqAm5S4RlmM/GMeFvVk=")
+        self.v = Vlab(working_directory=".", print_uart=True, token="demo-token-for-ci")
         self.v.load("BUILD/STM32_Button_Debounce.bin")
         self.v.on_pin_level_event(self.pin_listener)
         # running for a while to get the BSP done
