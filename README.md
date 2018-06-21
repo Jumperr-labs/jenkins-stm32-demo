@@ -7,11 +7,12 @@ Here's another example of a working continuous integration tool using Travis CI 
 
 ## What's in this sample
 
-1. We used STM32CubeMX to generate a Makefile project. This is required in order to have a project we can easily build on a Linux machine with GCC-ARM.
+1. We used an mBed STM32 deboucer project to demonstrate how to test a button with a debouncer. The code turns on an LED every time the button is pressed.
 2. We then created a Docker container with the toolchain installed.
-3. Next, we configured CircleCI and TravisCI to build our project every time we push new code to GitHub.
+3. We create a Jumper test script that presses the button multiple times, but thanks to the debouncer it should only count as one.
+4. Next, we configured CircleCI and TravisCI to build and run our testsour project every time we push new code to GitHub.
 
-For full details and walkthrough, [head to the following link](https://blog.jumper.io/stm32-build-server/).
+For full details and walkthrough, [head to the following link](https://blog.jumper.io/stm32-continuous-integration/).
 
 ## How to run the build server locally
 
@@ -21,9 +22,10 @@ Docker - (if you’re looking to implement a continuous integration process, Doc
 ### Run these commands
 ```
 docker pull jumperio/vlab-gcc-arm
-git clone https://github.com/Jumperr-labs/stm32_cubemx_sample.git
-cd stm32_cubemx_sample
-docker run -v $PWD:/my_files_in_docker –entrypoint /usr/bin/make jumperio/vlab-gcc-arm -C my_files_in_docker
+git clone https://github.com/Jumperr-labs/STM32_Button_Debounce.git
+cd STM32_Button_Debounce
+docker run -v $PWD:/my_files_in_docker --entrypoint /usr/bin/make jumperio/vlab-gcc-arm -C my_files_in_docker
+docker run -v $PWD:/my_files_in_docker -w /my_files_in_docker --entrypoint python jumperio/vlab-gcc-arm test.py
 ```
 
 # Next steps
