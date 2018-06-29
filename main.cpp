@@ -3,7 +3,7 @@
 DigitalOut led1(LED1);
 
 InterruptIn button1(USER_BUTTON);
-volatile bool button1_pressed = false; // Used in the main loop
+volatile bool button1_pressed = false; // Used in the main loop 1
 volatile bool button1_enabled = true; // Used for debouncing
 Timeout button1_timeout; // Used for debouncing
 
