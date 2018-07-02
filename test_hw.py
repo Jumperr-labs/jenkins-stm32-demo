@@ -18,9 +18,9 @@ class HwTest(unittest.TestCase):
 
     def testSanity(self):
         sleep(2)
-        expected_data = 'mBed boot done\n'
+        expected_data = 'mBed boot'
         data = self.serial.read(len(expected_data))
-        self.assertEqual(data, expected_data)
+        self.assertTrue(expected_data in data)
 
 
 if __name__ == '__main__':
