@@ -17,7 +17,7 @@ class HwTest(unittest.TestCase):
         subprocess.check_call(args, cwd=openocd_dir)
 
     def testSanity(self):
-        sleep(1)
+        sleep(2)
         expected_data = 'mBed boot done\n'
         data = self.serial.read(len(expected_data))
         self.assertEqual(data, expected_data)
