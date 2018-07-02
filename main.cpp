@@ -25,6 +25,7 @@ void button1_onpressed_cb(void)
 
 int main()
 {
+
     printf("mBed boot done\n");
 
     //button1.mode(PullUp); // Activate pull-up
