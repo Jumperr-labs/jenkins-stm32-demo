@@ -8,7 +8,6 @@ from time import sleep
 class HwTest(unittest.TestCase):
     def setUp(self):
         self.serial = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=1)
-        sleep(2)
         self.serial.read()
         self.restart()
 
