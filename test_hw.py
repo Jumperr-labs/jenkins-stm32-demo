@@ -9,7 +9,7 @@ class HwTest(unittest.TestCase):
     def setUp(self):
         sleep(2)
         self.serial = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=1)
-        self.serial.read()
+        self.serial.read(1024)
         self.restart()
 
     @staticmethod
