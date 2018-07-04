@@ -8,9 +8,12 @@ from time import sleep
 class HwTest(unittest.TestCase):
     def setUp(self):
         self.serial = serial.Serial('/dev/ttyACM0', baudrate=9600, timeout=1)
+        sleep(2)
+        self.serial.read()
         self.restart()
 
-    def restart(self):
+    @staticmethod
+    def restart():
         openocd_dir = os.environ['OPENOCD_PATH']
         openocd_bin = os.path.join(openocd_dir, 'bin', 'openocd')
         args = [openocd_bin, '-f', 'scripts/board/st_nucleo_f4.cfg', '-c', 'init', '-c', 'reset', '-c', 'exit']
@@ -18,9 +21,9 @@ class HwTest(unittest.TestCase):
 
     def testSanity(self):
         sleep(2)
-        expected_data = 'mBed boot'
+        expected_data = 'mBed boot done\n'
         data = self.serial.read(len(expected_data))
-        self.assertTrue(expected_data in data)
+        self.assertEqual(data, expected_data)
 
 
 if __name__ == '__main__':
