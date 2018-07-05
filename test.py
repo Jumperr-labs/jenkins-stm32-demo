@@ -34,8 +34,8 @@ class TestDebouncer(unittest.TestCase):
         self.v.UserButton.on()
         self.v.UserButton.off()
         self.v.run_for_ms(280)
-        self.assertEqual(self.is_led_on, True)
-        self.assertEqual(self.times_pressed, 1)
+        self.assertEqual(self.is_led_on, True, "LED was never turned on")
+        self.assertEqual(self.times_pressed, 1, "Number of times pressed should have been 1 but was {}".format(self.times_pressed))
 
 
 if __name__ == '__main__':
