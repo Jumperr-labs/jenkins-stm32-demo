@@ -10,7 +10,7 @@ RUN wget https://github.com/gnu-mcu-eclipse/openocd/releases/download/v0.10.0-8-
     && tar xvf gnu-mcu-eclipse-openocd-0.10.0-8-20180512-1921-centos64.tgz \
     && rm gnu-mcu-eclipse-openocd-0.10.0-8-20180512-1921-centos64.tgz
 
+RUN pip install pyserial
+
 ENV OPENOCD_PATH "/gnu-mcu-eclipse/openocd/0.10.0-8-20180512-1921/"
 USER jenkins
-
-RUN pip install pyserial
