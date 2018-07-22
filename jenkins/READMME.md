@@ -1,0 +1,1 @@
+`docker run --user root -it --rm --privileged -d -v /dev:/dev -v /home/parallels/jenkins_home:/var/jenkins_home -p 8080:8080 jumperio/jenkins-demo`
