@@ -24,8 +24,8 @@ Docker - (if you’re looking to implement a continuous integration process, Doc
 docker pull jumperio/vlab-gcc-arm
 git clone https://github.com/Jumperr-labs/STM32_Button_Debounce.git
 cd STM32_Button_Debounce
-docker run -v $PWD:/my_files_in_docker --entrypoint /usr/bin/make jumperio/vlab-gcc-arm -C my_files_in_docker
-docker run -v $PWD:/my_files_in_docker -w /my_files_in_docker --entrypoint python jumperio/vlab-gcc-arm test.py
+docker run --rm -v $PWD:/my_files_in_docker --entrypoint /usr/bin/make jumperio/vlab-gcc-arm -C my_files_in_docker
+docker run --rm -v $PWD:/my_files_in_docker -w /my_files_in_docker --entrypoint python jumperio/vlab-gcc-arm test.py
 ```
 
 # Next steps
